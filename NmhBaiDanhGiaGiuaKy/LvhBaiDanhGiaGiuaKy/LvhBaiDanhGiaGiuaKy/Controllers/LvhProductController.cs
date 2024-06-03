@@ -1,52 +1,52 @@
-﻿using LvhBaiDanhGiaGiuaKy.Models;
+using NmhBaiDanhGiaGiuaKy.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LvhBaiDanhGiaGiuaKy.Controllers
+namespace NmhBaiDanhGiaGiuaKy.Controllers
 {
-    public class LvhProductController : Controller
+    public class NmhProductController : Controller
     {
-        private static List<LvhProduct> lvhProducts = new List<LvhProduct>()
+        private static List<NmhProduct> nmhProducts = new List<NmhProduct>()
         {
-            new LvhProduct(){LvhId=106,LvhFullName="Lê Vinh Huy",LvhImage="1234",LvhQuantity=10,LvhPrice=1000000,LvhIsActive=true},
-            new LvhProduct(){LvhId=1,LvhFullName="Đỗ Trọng Thạo",LvhImage="1235",LvhQuantity=11,LvhPrice=2000000,LvhIsActive=true},
+            new NmhProduct(){NmhId=106,NmhFullName="Lê Vinh Huy",NmhImage="1234",NmhQuantity=10,NmhPrice=1000000,NmhIsActive=true},
+            new NmhProduct(){NmhId=1,NmhFullName="Đỗ Trọng Thạo",NmhImage="1235",NmhQuantity=11,NmhPrice=2000000,NmhIsActive=true},
 
         };
-        // GET: LvhProduct
-        public ActionResult LvhIndex()
+        // GET: NmhProduct
+        public ActionResult NmhIndex()
         {
-            return View(lvhProducts);
+            return View(nmhProducts);
         }
-        public ActionResult LvhCreate()
+        public ActionResult NmhCreate()
         {
-            var lvhModel =new LvhProduct();
-            return View(lvhModel);
+            var nmhModel = new NmhProduct();
+            return View(nmhModel);
         }
         [HttpPost]
-        public ActionResult LvhCreate(LvhProduct lvhProduct)
+        public ActionResult NmhCreate(NmhProduct nmhProduct)
         {
             if (!ModelState.IsValid)
             {
-                return View(lvhProduct);
+                return View(nmhProduct);
             }
-            lvhProducts.Add(lvhProduct);
-            return RedirectToAction("LvhIndex");
+            nmhProducts.Add(nmhProduct);
+            return RedirectToAction("NmhIndex");
         }
-        public ActionResult LvhEdit(int id)
+        public ActionResult NmhEdit(int id)
         {
-            var product = lvhProducts.Find(p => p.LvhId == id);
+            var product = nmhProducts.Find(p => p.NmhId == id);
             if (product == null)
             {
                 return HttpNotFound();
             }
             return View(product);
         }
-        public ActionResult LvhDetails(int id)
+        public ActionResult NmhDetails(int id)
         {
-            var product = lvhProducts.Find(p => p.LvhId == id);
+            var product = nmhProducts.Find(p => p.NmhId == id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -56,28 +56,27 @@ namespace LvhBaiDanhGiaGiuaKy.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult LvhEdit(LvhProduct lvhProduct)
+        public ActionResult NmhEdit(NmhProduct nmhProduct)
         {
             if (!ModelState.IsValid)
             {
-                return View(lvhProduct);
+                return View(nmhProduct);
             }
 
-            var product = lvhProducts.Find(p => p.LvhId == lvhProduct.LvhId);
+            var product = nmhProducts.Find(p => p.NmhId == nmhProduct.NmhId);
             if (product == null)
             {
                 return HttpNotFound();
             }
 
             // Cập nhật các giá trị
-            product.LvhFullName = lvhProduct.LvhFullName;
-            product.LvhImage = lvhProduct.LvhImage;
-            product.LvhQuantity = lvhProduct.LvhQuantity;
-            product.LvhPrice = lvhProduct.LvhPrice;
-            product.LvhIsActive = lvhProduct.LvhIsActive;
+            product.NmhFullName = nmhProduct.NmhFullName;
+            product.NmhImage = nmhProduct.NmhImage;
+            product.NmhQuantity = nmhProduct.NmhQuantity;
+            product.NmhPrice = nmhProduct.NmhPrice;
+            product.NmhIsActive = nmhProduct.NmhIsActive;
 
-            return RedirectToAction("LvhIndex");
+            return RedirectToAction("NmhIndex");
         }
-        
     }
 }
