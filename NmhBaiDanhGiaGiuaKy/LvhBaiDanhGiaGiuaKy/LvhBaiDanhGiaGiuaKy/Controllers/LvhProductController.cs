@@ -11,7 +11,7 @@ namespace NmhBaiDanhGiaGiuaKy.Controllers
     {
         private static List<NmhProduct> nmhProducts = new List<NmhProduct>()
         {
-            new NmhProduct(){NmhId=106,NmhFullName="Lê Vinh Huy",NmhImage="1234",NmhQuantity=10,NmhPrice=1000000,NmhIsActive=true},
+            new NmhProduct(){NmhId=106,NmhFullName="Nguễn Minh Hiệp",NmhImage="1234",NmhQuantity=10,NmhPrice=1000000,NmhIsActive=true},
             new NmhProduct(){NmhId=1,NmhFullName="Đỗ Trọng Thạo",NmhImage="1235",NmhQuantity=11,NmhPrice=2000000,NmhIsActive=true},
 
         };
