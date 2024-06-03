@@ -1,59 +1,60 @@
-﻿@model LvhBaiDanhGiaGiuaKy.Models.LvhProduct
+@model NmhBaiDanhGiaGiuaKy.Models.NmhProduct
 
 @{
-    ViewBag.Title = "LvhDetails";
+    ViewBag.Title = "NmhDetails";
 }
 
-<h2>LvhDetails</h2>
+<h2>NmhDetails</h2>
 
 <div>
-    <h4>LvhProduct</h4>
+    <h4>NmhProduct</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.LvhFullName)
+            @Html.DisplayNameFor(model => model.NmhFullName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LvhFullName)
+            @Html.DisplayFor(model => model.NmhFullName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LvhImage)
+            @Html.DisplayNameFor(model => model.NmhImage)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LvhImage)
+            @Html.DisplayFor(model => model.NmhImage)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LvhQuantity)
+            @Html.DisplayNameFor(model => model.NmhQuantity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LvhQuantity)
+            @Html.DisplayFor(model => model.NmhQuantity)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LvhPrice)
+            @Html.DisplayNameFor(model => model.NmhPrice)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LvhPrice)
+            @Html.DisplayFor(model => model.NmhPrice)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LvhIsActive)
+            @Html.DisplayNameFor(model => model.NmhIsActive)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LvhIsActive)
+            @Html.DisplayFor(model => model.NmhIsActive)
         </dd>
 
     </dl>
 </div>
 <div>
-    <a href="LvhEdit" asp-route-id="@Model.LvhId">Edit</a> |
-    <a href="LvhIndex">Back to List</a>
+    <a href="@Url.Action("NmhEdit", "NmhProduct", new { id = Model.NmhId })">Edit</a> |
+    <a href="@Url.Action("NmhIndex", "NmhProduct")">Back to List</a>
 </div>
+
 
