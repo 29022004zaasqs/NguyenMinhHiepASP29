@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace LvhBaiDanhGiaGiuaKy.Models
+namespace NmhBaiDanhGiaGiuaKy.Models
 {
     public class NmhProduct
     {
